@@ -1,13 +1,17 @@
 function fibonacci(num) {
-  if (num === 0){
-    return 0
+  let answer = []
+  for (let i = 0; i <= num; i++){
+    if (i === 0){
+      answer.push(0)
+    } 
+    else if (i === 1){
+      answer.push(1)
+    }
+    else{
+      answer.push(answer[i-1] + answer[i-2])
+    }
   }
-  else if (num === 1){
-    return 1
-  }
-  else {
-  return fibonacci(num - 1) + fibonacci(num - 2)
-  }
+  return answer[num] 
 }
 module.exports = fibonacci;
 console.log(fibonacci(7))
